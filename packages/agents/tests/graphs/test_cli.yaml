@@ -1,0 +1,5 @@
+version: 0.5
+nodes:
+  node1:
+    agent: testAgent
+    

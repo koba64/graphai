@@ -1,0 +1,32 @@
+{
+  "version": 0.5,
+  "nodes": {
+    "echo": {
+      "agent": "echoAgent",
+      "params": {
+        "message": ["hello", "hello"]
+      }
+    },
+    "mapNode": {
+      "agent": "mapAgent",
+      "inputs": { "rows": ":echo.message" },
+      "graph": {
+        "version": 0.5,
+        "nodes": {
+          "copyAgent": {
+            "agent": "copyAgent",
+            "params": { "namedKey": "item" },
+            "inputs": { "item": [":row"] },
+            "isResult": true
+          }
+        }
+      }
+    },
+    "copyAgent2": {
+      "agent": "copyAgent",
+      "params": { "namedKey": "item" },
+      "inputs": { "item": [":mapNode"] },
+      "isResult": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "graphai",
+  "version": "0.6.14",
+  "description": "Asynchronous data flow execution engine for agentic AI apps.",
+  "main": "lib/bundle.cjs.js",
+  "module": "lib/bundle.esm.js",
+  "browser": "lib/bundle.umd.js",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rm -r lib/* && tsc && npx rollup -c && tsc-alias",
+    "eslint": "eslint",
+    "doc": " npx typedoc src/index.ts --out ../../docs/apiDoc",
+    "format": "prettier --write '{src,tests,samples}/**/*.ts' *.mjs",
+    "test": "node --test  -r tsconfig-paths/register --require ts-node/register ./tests/**/test_*.ts",
+    "b": "yarn run format && yarn run eslint && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/receptron/graphai"
+  },
+  "author": "Satoshi Nakajima, Isamu Arimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/receptron/graphai/issues"
+  },
+  "homepage": "https://github.com/receptron/graphai#readme",
+  "devDependencies": {
+    "typedoc": "^0.27.5"
+  },
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  }
+}

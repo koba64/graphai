@@ -1,0 +1,39 @@
+{
+  "name": "@graphai/samples",
+  "version": "0.0.3",
+  "description": "Asynchronous data flow execution engine for agentic AI apps.",
+  "main": "src/sample_runner.ts",
+  "files": [
+    "./src"
+  ],
+  "scripts": {
+    "build": "echo nothing",
+    "eslint": "eslint",
+    "test": "echo hello",
+    "format": "prettier --write 'src/**/*.ts' graph_data/**/*.{json,yaml} htmlSample/*.html",
+    "b": "yarn run format && yarn run eslint && yarn run build",
+    "doc": "yarn run sample src/toYamlSample.ts",
+    "samples": "npx ts-node  -r tsconfig-paths/register src/sample_runner.ts",
+    "sample": "npx ts-node  -r tsconfig-paths/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/receptron/graphai"
+  },
+  "author": "Satoshi Nakajima, Isamu Arimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/receptron/graphai/issues"
+  },
+  "homepage": "https://github.com/receptron/graphai#readme",
+  "devDependencies": {
+    "@inquirer/prompts": "^7.2.0",
+    "arxiv-api-ts": "^1.0.4",
+    "sqlite3": "^5.1.7"
+  },
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  }
+}

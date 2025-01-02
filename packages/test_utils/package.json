@@ -1,0 +1,39 @@
+{
+  "name": "@receptron/test_utils",
+  "version": "0.2.3",
+  "description": "Test utilities for GraphAI.",
+  "main": "lib/index.js",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "rm -r lib/* && tsc && tsc-alias",
+    "eslint": "eslint",
+    "test": "echo hello",
+    "doc": "echo nothing",
+    "format": "prettier --write 'src/**/*.ts'",
+    "b": "yarn run format && yarn run eslint && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/receptron/graphai"
+  },
+  "author": "Satoshi Nakajima, Isamu Arimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/receptron/graphai/issues"
+  },
+  "homepage": "https://github.com/receptron/graphai#readme",
+  "dependencies": {
+    "yaml": "^2.6.1"
+  },
+  "devDependencies": {
+    "@graphai/agent_filters": "^0.0.9",
+    "@graphai/vanilla": "^0.2.6",
+    "graphai": "^0.6.11"
+  },
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  }
+}

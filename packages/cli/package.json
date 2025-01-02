@@ -1,0 +1,48 @@
+{
+  "name": "@receptron/graphai_cli",
+  "version": "0.6.8",
+  "description": "GraphAI command line tools.",
+  "main": "lib/graphai_cli.js",
+  "bin": {
+    "graphai": "lib/graphai_cli.js"
+  },
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "eslint": "eslint --fix",
+    "doc": "echo nothing",
+    "format": "prettier --write '{src,test_yaml,samples}/**/*.{yaml,ts,json}'",
+    "test": "yarn run test_sh",
+    "test_sh": "./scripts/test.sh",
+    "test_node": "node --test  -r tsconfig-paths/register --require ts-node/register ./test_yaml/test_*.ts",
+    "cli": "npx ts-node  -r tsconfig-paths/register ./src/graphai_cli.ts",
+    "b": "yarn run format && yarn run eslint && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/receptron/graphai"
+  },
+  "author": "Receptron team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/receptron/graphai/issues"
+  },
+  "homepage": "https://github.com/receptron/graphai#readme",
+  "devDependencies": {
+    "@types/yargs": "^17.0.33"
+  },
+  "dependencies": {
+    "@graphai/agent_filters": "^0.0.9",
+    "@graphai/agents": "^0.2.5",
+    "@receptron/test_utils": "^0.2.2",
+    "dotenv": "^16.4.7",
+    "graphai": "^0.6.11",
+    "yargs": "^17.7.2"
+  },
+  "types": "./lib/graphai_cli.d.ts",
+  "directories": {
+    "lib": "lib"
+  }
+}

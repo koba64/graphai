@@ -1,0 +1,61 @@
+version: 0.5
+nodes:
+  outer1:
+    agent: sleepAndMergeAgent
+    params:
+      duration: 500
+      value:
+        outer1: output
+  outer2:
+    agent: nestedAgent
+    inputs:
+      inner0: :outer1
+    graph:
+      version: 0.5
+      nodes:
+        inner1:
+          agent: sleepAndMergeAgent
+          params:
+            duration: 500
+            value:
+              inner1: output
+        inner2:
+          agent: sleepAndMergeAgent
+          params:
+            duration: 100
+            value:
+              inner2: output
+        inner3:
+          agent: sleepAndMergeAgent
+          isResult: true
+          params:
+            duration: 500
+            value:
+              inner3: output
+          inputs:
+            array: [:inner0, :inner1, :inner2]
+  outer3:
+    agent: sleepAndMergeAgent
+    params:
+      duration: 500
+      value:
+        outer3: output
+    inputs:
+      array: [:outer2.inner3]
+  outer4:
+    agent: sleepAndMergeAgent
+    params:
+      duration: 100
+      value:
+        outer4: output
+    inputs:
+      array: [:outer3]
+  outer5:
+    agent: sleepAndMergeAgent
+    params:
+      duration: 500
+      value:
+        outer5: output
+    inputs:
+      array: [:outer2.inner3, :outer4]
+    isResult: true

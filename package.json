@@ -1,0 +1,45 @@
+{
+  "name": "graphai-wrapper",
+  "version": "0.0.1",
+  "description": "Monorepo for the graphai ",
+  "scripts": {
+    "test": "yarn workspaces run test",
+    "build": "yarn workspaces run build",
+    "eslint": "yarn workspaces run eslint",
+    "format": "yarn workspaces run format",
+    "format_top": "prettier --write src/*.ts",
+    "doc": "yarn workspaces run doc",
+    "monoRepoAgentDoc": "npx tsx src/monoRepoAgentDocs.ts",
+    "markdown": "npx tsx src/markdown.ts",
+    "sample": "npx ts-node docs/async/sample1.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "rollup": "^4.29.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.8",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
+  },
+  "workspaces": [
+    "packages/*",
+    "agents/*",
+    "llm_agents/*"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.6.1"
+  }
+}
